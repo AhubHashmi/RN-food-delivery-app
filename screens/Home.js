@@ -107,7 +107,7 @@ const Home = ({ navigation }) => {
                     photo: images.crispy_chicken_burger,
                     description: "Burger with crispy chicken, cheese and lettuce",
                     calories: 200,
-                    price: 10
+                    price: 400
                 },
                 {
                     menuId: 2,
@@ -115,7 +115,7 @@ const Home = ({ navigation }) => {
                     photo: images.honey_mustard_chicken_burger,
                     description: "Crispy Chicken Burger with Honey Mustard Coleslaw",
                     calories: 250,
-                    price: 15
+                    price: 450
                 },
                 {
                     menuId: 3,
@@ -123,7 +123,7 @@ const Home = ({ navigation }) => {
                     photo: images.baked_fries,
                     description: "Crispy Baked French Fries",
                     calories: 194,
-                    price: 8
+                    price: 200
                 }
             ]
         },
@@ -150,7 +150,7 @@ const Home = ({ navigation }) => {
                     photo: images.hawaiian_pizza,
                     description: "Canadian bacon, homemade pizza crust, pizza sauce",
                     calories: 250,
-                    price: 15
+                    price: 999
                 },
                 {
                     menuId: 5,
@@ -158,7 +158,7 @@ const Home = ({ navigation }) => {
                     photo: images.pizza,
                     description: "Fresh tomatoes, aromatic basil pesto and melted bocconcini",
                     calories: 250,
-                    price: 20
+                    price: 999
                 },
                 {
                     menuId: 6,
@@ -166,7 +166,7 @@ const Home = ({ navigation }) => {
                     photo: images.tomato_pasta,
                     description: "Pasta with fresh tomatoes",
                     calories: 100,
-                    price: 10
+                    price: 500
                 },
                 {
                     menuId: 7,
@@ -174,7 +174,7 @@ const Home = ({ navigation }) => {
                     photo: images.salad,
                     description: "Finely chopped lettuce, tomatoes, cucumbers",
                     calories: 100,
-                    price: 10
+                    price: 200
                 }
             ]
         },
@@ -201,7 +201,7 @@ const Home = ({ navigation }) => {
                     photo: images.chicago_hot_dog,
                     description: "Fresh tomatoes, all beef hot dogs",
                     calories: 100,
-                    price: 20
+                    price: 500
                 }
             ]
         },
@@ -228,7 +228,7 @@ const Home = ({ navigation }) => {
                     photo: images.sushi,
                     description: "Fresh salmon, sushi rice, fresh juicy avocado",
                     calories: 100,
-                    price: 50
+                    price: 500
                 }
             ]
         },
@@ -255,7 +255,7 @@ const Home = ({ navigation }) => {
                     photo: images.kolo_mee,
                     description: "Noodles with char siu",
                     calories: 200,
-                    price: 5
+                    price: 200
                 },
                 {
                     menuId: 11,
@@ -263,7 +263,7 @@ const Home = ({ navigation }) => {
                     photo: images.sarawak_laksa,
                     description: "Vermicelli noodles, cooked prawns",
                     calories: 300,
-                    price: 8
+                    price: 300
                 },
                 {
                     menuId: 12,
@@ -271,7 +271,7 @@ const Home = ({ navigation }) => {
                     photo: images.nasi_lemak,
                     description: "A traditional Malay rice dish",
                     calories: 300,
-                    price: 8
+                    price: 350
                 },
                 {
                     menuId: 13,
@@ -279,7 +279,7 @@ const Home = ({ navigation }) => {
                     photo: images.nasi_briyani_mutton,
                     description: "A traditional Indian rice dish with mutton",
                     calories: 300,
-                    price: 8
+                    price: 500
                 },
 
             ]
@@ -308,7 +308,7 @@ const Home = ({ navigation }) => {
                     photo: images.teh_c_peng,
                     description: "Three Layer Teh C Peng",
                     calories: 100,
-                    price: 2
+                    price: 100
                 },
                 {
                     menuId: 13,
@@ -316,7 +316,7 @@ const Home = ({ navigation }) => {
                     photo: images.ice_kacang,
                     description: "Shaved Ice with red beans",
                     calories: 100,
-                    price: 3
+                    price: 200
                 },
                 {
                     menuId: 14,
@@ -324,7 +324,7 @@ const Home = ({ navigation }) => {
                     photo: images.kek_lapis,
                     description: "Layer cakes",
                     calories: 300,
-                    price: 20
+                    price: 500
                 }
             ]
 
@@ -359,7 +359,7 @@ const Home = ({ navigation }) => {
 
     function renderHeader() {
         return (
-            <View style={{ flexDirection: 'row', height: 30 }}>
+            <View style={{ flexDirection: 'row', height: 40 }}>
                 <TouchableOpacity
                     style={{
                         width: 50,
@@ -464,8 +464,8 @@ const Home = ({ navigation }) => {
 
         return (
             <View style={{ padding: SIZES.padding * 2 }}>
-                <Text style={{ ...FONTS.h1 }}>Food Delivery App</Text>
-                {/* <Text style={{ ...FONTS.h1 }}>Categories</Text> */}
+                <Text style={{ ...FONTS.h1 }}>Main</Text>
+                <Text style={{ ...FONTS.h1 }}>Categories</Text>
 
                 <FlatList
                     data={categories}

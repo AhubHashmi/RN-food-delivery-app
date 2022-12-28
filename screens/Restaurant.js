@@ -342,7 +342,7 @@ const Restaurant = ({ route, navigation }) => {
                         }}
                     >
                         <Text style={{ ...FONTS.h3 }}>{getBasketItemCount()} items in Cart</Text>
-                        <Text style={{ ...FONTS.h3 }}>${sumOrder()}</Text>
+                        <Text style={{ ...FONTS.h3 }}>Rs.{sumOrder()}</Text>
                     </View>
 
                     <View
@@ -396,9 +396,12 @@ const Restaurant = ({ route, navigation }) => {
                                 alignItems: 'center',
                                 borderRadius: SIZES.radius
                             }}
-                            onPress={() => navigation.navigate("OrderDelivery", {
+                            // onPress={() => navigation.navigate("OrderDelivery", {
+                            //     restaurant: restaurant,
+                            //     currentLocation: currentLocation
+                            // })}
+                            onPress={() => navigation.navigate("LiveGeoLocation", {
                                 restaurant: restaurant,
-                                currentLocation: currentLocation
                             })}
                         >
                             <Text style={{ color: COLORS.white, ...FONTS.h2 }}>Order</Text>
