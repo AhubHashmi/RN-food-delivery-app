@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
     StyleSheet,
     SafeAreaView,
     View,
     Text,
+    Alert,
     TouchableOpacity,
     Image,
     Animated
@@ -12,6 +13,8 @@ import { isIphoneX } from 'react-native-iphone-x-helper'
 
 import { icons, COLORS, SIZES, FONTS } from '../constants'
 
+import database from '@react-native-firebase/database';
+
 const Restaurant = ({ route, navigation }) => {
 
     const scrollX = new Animated.Value(0);
@@ -19,9 +22,28 @@ const Restaurant = ({ route, navigation }) => {
     const [currentLocation, setCurrentLocation] = React.useState(null);
     const [orderItems, setOrderItems] = React.useState([]);
 
+    let items = route.params.item.menu
+
+    let itemsData = () => {
+        let key = database().ref(`Menu/`)
+        let keys = key.push().key
+        items.loc = keys
+        console.log(items)
+
+        database().ref(`Menu/${items.loc}`).set(items)
+            .then((res) => {
+                console.log(res)
+                Alert.alert("Added to cart")
+                navigation.navigate('Cart')
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
     React.useEffect(() => {
         let { item, currentLocation } = route.params;
-
+        console.log(items); //added yesterday 31-12-22
         setRestaurant(item)
         setCurrentLocation(currentLocation)
     })
@@ -400,9 +422,10 @@ const Restaurant = ({ route, navigation }) => {
                             //     restaurant: restaurant,
                             //     currentLocation: currentLocation
                             // })}
-                            onPress={() => navigation.navigate("LiveGeoLocation", {
-                                restaurant: restaurant,
-                            })}
+                            // onPress={() => navigation.navigate("LiveGeoLocation", {
+                            //     restaurant: restaurant,
+                            // })}
+                            onPress={itemsData}
                         >
                             <Text style={{ color: COLORS.white, ...FONTS.h2 }}>Order</Text>
                         </TouchableOpacity>
