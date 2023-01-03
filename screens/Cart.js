@@ -8,8 +8,8 @@ import { useState } from 'react';
 export default function Cart({ navigation }) {
     const [list, setList] = useState([]);
     let getOrder = () => {
-        database().ref('order').once('value', dt => {
-            let li = Object.values(dt.val());
+        database().ref('order').once('value', snapshot => {
+            let li = Object.values(snapshot.val());
             setList([...li]);
         });
     };

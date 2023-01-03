@@ -399,6 +399,7 @@ const Home = ({ navigation }) => {
                         paddingRight: SIZES.padding * 2,
                         justifyContent: 'center'
                     }}
+                    onPress={() => navigation.navigate("Cart")}
                 >
                     <Image
                         source={icons.basket}
